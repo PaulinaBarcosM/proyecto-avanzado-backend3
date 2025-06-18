@@ -2,12 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-
 import usersRouter from "./routes/users.router.js";
 import petsRouter from "./routes/pets.router.js";
 import adoptionsRouter from "./routes/adoption.router.js";
 import sessionsRouter from "./routes/sessions.router.js";
 import mocksRouter from "./routes/mocks.router.js";
+import { addLogger } from "./middlewares/logger.middleware.js";
 
 dotenv.config();
 
@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(addLogger);
 
 app.use("/api/users", usersRouter);
 app.use("/api/pets", petsRouter);
@@ -38,3 +39,9 @@ const startServer = async () => {
 };
 
 startServer();
+
+app.get("/", (req, res) => {
+  req.logger.info("Ruta raíz accedida correctamente");
+  req.logger.warn("¡Alerta!");
+  res.send("Logger funcionando!");
+});
