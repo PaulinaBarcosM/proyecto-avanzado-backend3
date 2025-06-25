@@ -16,3 +16,4 @@
 {"level":"warn","message":"ID de usuario o mascota inválido. UID: :uid | PID: :pid","timestamp":"2025-06-18T21:55:54.753Z"}
 {"level":"warn","message":"Login con campos incompletos","timestamp":"2025-06-18T22:39:21.448Z"}
 {"level":"error","message":"Error en unprotected login: Expected \"payload\" to be a plain object.","timestamp":"2025-06-18T22:42:27.424Z"}
+{"level":"warn","message":"¡Alerta!","timestamp":"2025-06-25T02:33:18.983Z"}
