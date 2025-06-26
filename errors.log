@@ -17,3 +17,22 @@
 {"level":"warn","message":"Login con campos incompletos","timestamp":"2025-06-18T22:39:21.448Z"}
 {"level":"error","message":"Error en unprotected login: Expected \"payload\" to be a plain object.","timestamp":"2025-06-18T22:42:27.424Z"}
 {"level":"warn","message":"¡Alerta!","timestamp":"2025-06-25T02:33:18.983Z"}
+{"level":"warn","message":"¡Alerta!","timestamp":"2025-06-25T12:35:26.420Z"}
+{"level":"error","message":"Error al obtener usuario :uid: mongoose is not defined","timestamp":"2025-06-25T14:13:00.213Z"}
+{"level":"error","message":"Error al obtener usuario :uid: mongoose is not defined","timestamp":"2025-06-25T14:13:01.630Z"}
+{"level":"error","message":"Error al obtener usuario :uid: mongoose is not defined","timestamp":"2025-06-25T14:13:03.081Z"}
+{"level":"error","message":"Error al obtener usuario :uid: mongoose is not defined","timestamp":"2025-06-25T14:13:04.403Z"}
+{"level":"error","message":"Error al obtener usuario :uid: mongoose is not defined","timestamp":"2025-06-25T14:13:04.658Z"}
+{"level":"error","message":"Error al obtener usuario :uid: mongoose is not defined","timestamp":"2025-06-25T14:13:05.588Z"}
+{"level":"error","message":"Error al obtener usuario :uid: mongoose is not defined","timestamp":"2025-06-25T14:14:44.552Z"}
+{"level":"error","message":"Error al obtener usuario :uid: mongoose is not defined","timestamp":"2025-06-25T14:14:46.072Z"}
+{"level":"error","message":"Error al obtener usuario {id}: mongoose is not defined","timestamp":"2025-06-25T20:54:00.372Z"}
+{"level":"error","message":"Error al obtener usuario {id}: mongoose is not defined","timestamp":"2025-06-25T20:54:01.918Z"}
+{"level":"error","message":"Error al obtener usuario {id}: mongoose is not defined","timestamp":"2025-06-25T20:54:46.531Z"}
+{"level":"error","message":"Error al obtener usuario {id}: mongoose is not defined","timestamp":"2025-06-25T20:54:48.318Z"}
+{"level":"error","message":"Error al obtener usuario {id}: mongoose is not defined","timestamp":"2025-06-25T21:00:23.242Z"}
+{"level":"error","message":"Error al obtener usuario {id}: mongoose is not defined","timestamp":"2025-06-25T21:00:24.866Z"}
+{"level":"error","message":"Error al obtener usuario {id}: mongoose is not defined","timestamp":"2025-06-25T21:01:46.967Z"}
+{"level":"error","message":"Error al obtener usuario 123: mongoose is not defined","timestamp":"2025-06-25T21:06:06.250Z"}
+{"level":"error","message":"Error al obtener usuario 1234: mongoose is not defined","timestamp":"2025-06-25T21:08:05.392Z"}
+{"level":"warn","message":"Intento de actualizar usuario inexistente: ID 638bb233f7504b3dedc9387e","timestamp":"2025-06-25T21:42:44.547Z"}

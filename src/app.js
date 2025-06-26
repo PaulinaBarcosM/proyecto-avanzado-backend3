@@ -9,7 +9,7 @@ import sessionsRouter from "./routes/sessions.router.js";
 import mocksRouter from "./routes/mocks.router.js";
 import { addLogger } from "./middlewares/logger.middleware.js";
 import swaggerUi from "swagger-ui-express";
-import swaggerSpecs from "./swagger/docs/swagger.config.js";
+import swaggerSpecs from "./swagger/swagger.config.js";
 
 dotenv.config();
 
