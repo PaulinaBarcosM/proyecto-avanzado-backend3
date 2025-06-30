@@ -1,0 +1,178 @@
+paths:
+  /api/pets:
+    get:
+      summary: Obtener todas las mascotas
+      tags:
+        - Pets
+      responses:
+        "200":
+          description: Lista de mascotas obtenida correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Pet"
+        "500":
+          description: Error inerno del servidor
+    post:
+      summary: Crear una nueva mascota
+      tags:
+        - Pets
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/createPet"
+      responses:
+        "200":
+          description: Mascota creada exitosamente
+        "400":
+          description: Faltan datos obligatorios
+        "500":
+          description: Error interno del servidor
+
+  /api/pets/withimage:
+    post:
+      summary: Crear una mascota con imagen
+      tags:
+        - Pets
+      consumes:
+        - multipart/from-data
+      requestBody:
+        required: true
+        content:
+          multipart/from-data:
+            schema:
+              type: object
+              required:
+                - name
+                - specie
+                - birthDate
+                - image
+              properties:
+                name:
+                  type: string
+                specie:
+                  type: string
+                birthDate:
+                  type: string
+                  format: date
+                image:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: Mascota con imagen creada exitosamente
+        "400":
+          description: Faltan datos o imagen
+        "500":
+          description: Error interno del servidor
+
+  /api/pets/{pid}:
+    put:
+      summary: Actualizar una mascota por su ID
+      tags:
+        - Pets
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: ID de la mascota
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/updatePet"
+      responses:
+        "200":
+          description: Mascota actualizada exitosamente
+        "400":
+          description: ID inválido
+        "500":
+          description: Error interno del servidor
+
+    delete:
+      summary: Eliminar una mascota por su ID
+      tags:
+        - Pets
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: ID de la mascota
+      responses:
+        "200":
+          description: Mascota eliminada exitosamente
+        "400":
+          description: ID inválido
+        "500":
+          description: Error interno del servidor
+
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: ID autogenerado de MongoDB
+        name:
+          type: string
+        specie:
+          type: string
+        birthDate:
+          type: string
+          format: date
+        image:
+          type: string
+          nullable: true
+      example:
+        _id: "6658bb233f7504b3dedc4444"
+        name: "Luna"
+        specie: "Perro"
+        birthDate: "2020-06-01"
+        image: "/public/img/luna.jpg"
+  requestBodies:
+    createPet:
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - name
+              - specie
+              - birthDate
+            properties:
+              name:
+                type: string
+              specie:
+                type: string
+              birthDate:
+                type: string
+                format: date
+            example:
+              name: "Toby"
+              specie: "Gato"
+              birthDate: "2021-08-15"
+    updatePet:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              specie:
+                type: string
+              birthDate:
+                type: string
+                format: date
+              image:
+                type: string

@@ -1,0 +1,163 @@
+paths:
+  /api/sessions/register:
+    post:
+      summary: Registro de nuevo usuario
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/RegisterUser"
+      responses:
+        "200":
+          description: Usuario registrado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: string
+                example:
+                  status: success
+                  payload: 665f1c28f7bcb7330d26e1ab
+        "400":
+          description: Valores incompletos o usuario ya existente
+        "500":
+          description: Error interno del servidor
+
+  /api/sessions/login:
+    post:
+      summary: Inicia sesión con email y contraseña
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/LoginUser"
+      responses:
+        "200":
+          description: Login exitoso. Se genera cookie con JWT.
+          headers:
+            Set-Cookie:
+              description: Cookie de autenticación con JWT
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                example:
+                  status: success
+                  message: Logged in
+        "400":
+          description: Datos incompletos o contraseña incorrecta
+        "404":
+          description: Usuario no encontrado
+
+  /api/sessions/current:
+    get:
+      summary: Retorna el usuario actual autenticado (JWT protegido)
+      tags:
+        - Authentication
+      responses:
+        "200":
+          description: Usuario obtenido exitosamente desde JWT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: object
+                    example:
+                      _id: 665f1c28f7bcb7330d26e1ab
+                      email: "correo@correo.com"
+        "401":
+          description: Token inválido o no proporcionado
+
+  /api/sessions/unprotectedLogin:
+    post:
+      summary: Login alternativo sin DTO ni validación
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/LoginUser"
+      responses:
+        "200":
+          description: Login sin protección exitoso. Se genera cookie.
+        "400":
+          description: Datos inválidos o contraseña incorrecta
+        "404":
+          description: Usuario no encontrado
+
+  /api/sessions/unprotectedCurrent:
+    get:
+      summary: Verifica usuario autenticado por cookie sin protección
+      tags:
+        - Authentication
+      responses:
+        "200":
+          description: Usuario decodificado desde JWT no protegido
+        "401":
+          description: Cookie inválida o ausente
+
+components:
+  requestBodies:
+    RegisterUser:
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - first_name
+              - last_name
+              - email
+              - password
+            properties:
+              first_name:
+                type: string
+              last_name:
+                type: string
+              email:
+                type: string
+              password:
+                type: string
+            example:
+              first_name: "Pau"
+              last_name: "Backend"
+              email: "pau@example.com"
+              password: "123456"
+    LoginUser:
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - email
+              - password
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+            example:
+              email: "pau@example.com"
+              password: "123456"

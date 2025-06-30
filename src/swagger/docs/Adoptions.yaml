@@ -1,0 +1,100 @@
+paths:
+  /api/adoptions:
+    get:
+      summary: Obtener todas las adopciones
+      tags:
+        - Adoptions
+      responses:
+        "200":
+          description: Adopciones obtenidas correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Adoption"
+        "500":
+          description: Error interno del servidor
+
+  /api/adoptions/{aid}:
+    get:
+      summary: Obtener una adopción por su ID
+      tags:
+        - Adoptions
+      parameters:
+        - in: path
+          name: aid
+          required: true
+          schema:
+            type: string
+          description: ID de la adopción a consultar
+      responses:
+        "200":
+          description: Adopción encontrada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Adoption"
+        "404":
+          description: Adopción no encontrada
+        "500":
+          description: Error interno del servidor
+
+  /api/adoptions/{id}/{pid}:
+    post:
+      summary: Crear una adopción entre un usuario y una mascota
+      tags:
+        - Adoptions
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del usuario que adopta
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: ID de la mascota que se adopta
+      responses:
+        "200":
+          description: Mascota adoptada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                example:
+                  status: success
+                  message: Pet adopted
+        "400":
+          description: La mascota ya fue adoptada
+        "404":
+          description: Usuario o mascota no encontrados
+        "500":
+          description: Error interno del servidor
+
+components:
+  schemas:
+    Adoption:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: ID único de la adopción
+        owner:
+          type: string
+          description: ID del usuario que adoptó
+        pet:
+          type: string
+          description: ID de la mascota adoptada
+        example:
+          _id: "665ab1f86ee36e1234abc678"
+          owner: "665aa1a56ee36e8f3e7a9f23"
+          pet: "665ab0fd6ee36e1234abc123"
