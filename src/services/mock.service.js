@@ -1,5 +1,5 @@
-import PetModel from "../models/Pets.js";
-import UserModel from "../models/User.js";
+import PetModel from "../models/pets.model.js";
+import UserModel from "../models/users.model.js";
 import { generatePets } from "../utils/generatePets.js";
 import { generateUser } from "../utils/generateUser.js";
 import logger from "../utils/logger.js";

@@ -1,4 +1,4 @@
-import PetDTO from "../dto/Pet.dto.js";
+import PetsDTO from "../dto/pets.dto.js";
 import { petsService } from "../services/index.js";
 import __dirname from "../utils/index.js";
 import mongoose from "mongoose";
@@ -18,15 +18,22 @@ const getAllPets = async (req, res) => {
 
 const createPet = async (req, res) => {
   try {
-    const { name, specie, birthDate } = req.body;
-    if (!name || !specie || !birthDate) {
+    const { name, specie, breed, color, ageYears, ageMonths } = req.body;
+    if (!name || !specie || !breed || ageYears === undefined) {
       req.logger.warn("Faltan campos obligatorios para crear una mascota");
       return res
         .status(400)
         .send({ status: "error", error: "Incomplete values" });
     }
 
-    const pet = PetDTO.getPetInputFrom({ name, specie, birthDate });
+    const pet = PetsDTO.getPetInputFrom({
+      name,
+      specie,
+      breed,
+      color,
+      ageYears,
+      ageMonths,
+    });
     const result = await petsService.create(pet);
     req.logger.info(`Mascota creada: ${name}`);
     res.send({ status: "success", payload: result });
@@ -86,19 +93,22 @@ const deletePet = async (req, res) => {
 const createPetWithImage = async (req, res) => {
   try {
     const file = req.file;
-    const { name, specie, birthDate } = req.body;
+    const { name, specie, breed, color, ageYears, ageMonths } = req.body;
 
-    if (!name || !specie || !birthDate || !file) {
+    if (!name || !specie || !breed || ageYears === undefined || !file) {
       req.logger.warn("Faltan datos o imagen para crear mascota con imagen");
       return res
         .status(400)
         .send({ status: "error", error: "Incomplete values" });
     }
 
-    const pet = PetDTO.getPetInputFrom({
+    const pet = PetsDTO.getPetInputFrom({
       name,
       specie,
-      birthDate,
+      breed,
+      color,
+      ageYears,
+      ageMonths,
       image: `${__dirname}/../public/img/${file.filename}`,
     });
 

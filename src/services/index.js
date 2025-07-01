@@ -1,11 +1,15 @@
-import Users from "../dao/Users.dao.js";
-import Pet from "../dao/Pets.dao.js";
-import Adoption from "../dao/Adoption.js";
+import Users from "../dao/users.dao.js";
+import Pets from "../dao/pets.dao.js";
+import Adoption from "../dao/adoption.dao.js";
 
-import UserRepository from "../repository/UserRepository.js";
-import PetRepository from "../repository/PetRepository.js";
-import AdoptionRepository from "../repository/AdoptionRepository.js";
+import UsersRepository from "../repository/users.repository.js";
+import PetsRepository from "../repository/pets.repository.js";
+import AdoptionRepository from "../repository/adoption.repository.js";
 
-export const usersService = new UserRepository(new Users());
-export const petsService = new PetRepository(new Pet());
+export const usersService = new UsersRepository(new Users());
+export const petsService = new PetsRepository(new Pets());
 export const adoptionsService = new AdoptionRepository(new Adoption());
+
+import petsService from "./pets.service.js";
+
+export { petsService };
