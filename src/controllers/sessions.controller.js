@@ -1,7 +1,10 @@
-import { usersService } from "../services/index.js";
+import UsersService from "../services/users.service.js";
+import UsersRepository from "../repository/users.repository.js";
+import UsersDAO from "../dao/users.dao.js";
 import { createHash, passwordValidation } from "../utils/index.js";
 import jwt from "jsonwebtoken";
-import UsersDTO from "../dto/users.dto.js";
+
+const usersService = new UsersService(new UsersRepository(new UsersDAO()));
 
 const register = async (req, res) => {
   try {

@@ -1,7 +1,11 @@
 import PetsDTO from "../dto/pets.dto.js";
-import { petsService } from "../services/index.js";
+import PetsRepository from "../repository/pets.repository.js";
+import PetsService from "../services/pets.service.js";
+import PetsDAO from "../dao/pets.dao.js";
 import __dirname from "../utils/index.js";
 import mongoose from "mongoose";
+
+const petsService = new PetsService(new PetsRepository(new PetsDAO()));
 
 const getAllPets = async (req, res) => {
   try {

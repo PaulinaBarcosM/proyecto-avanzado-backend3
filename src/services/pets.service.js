@@ -1,13 +1,12 @@
 import mongoose from "mongoose";
-import PetsDAO from "../dao/pets.dao.js";
-import PetsRepository from "../repository/pets.repository.js";
-
-const petsDAO = new PetsDAO();
-const petsRepository = new PetsRepository(petsDAO);
 
 class PetsService {
+  constructor(repository) {
+    this.repository = repository;
+  }
+
   async getAll() {
-    return await petsRepository.getAll();
+    return await this.repository.getAll();
   }
 
   async getById(id) {
@@ -15,16 +14,15 @@ class PetsService {
       throw new Error("ID inválido");
     }
 
-    const pet = await petsRepository.getById(id);
+    const pet = await this.repository.getById(id);
     if (!pet) {
       throw new Error("Mascota no encontrada");
     }
-
     return pet;
   }
 
   async create(petData) {
-    return await petsRepository.create(petData);
+    return await this.repository.create(petData);
   }
 
   async update(id, updateData) {
@@ -32,7 +30,7 @@ class PetsService {
       throw new Error("ID inválido");
     }
 
-    const updatedPet = await petsRepository.update(id, updateData);
+    const updatedPet = await this.repository.update(id, updateData);
     if (!updatedPet) {
       throw new Error("Mascota no encontrada para actualizar");
     }
@@ -44,7 +42,7 @@ class PetsService {
       throw new Error("ID inválido");
     }
 
-    const deletedPet = await petsRepository.delete(id);
+    const deletedPet = await this.repository.delete(id);
     if (!deletedPet) {
       throw new Error("Mascota no encontrada para eliminar");
     }
@@ -52,4 +50,4 @@ class PetsService {
   }
 }
 
-export default new PetsService();
+export default PetsService;

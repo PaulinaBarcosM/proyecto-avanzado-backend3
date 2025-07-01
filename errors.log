@@ -36,3 +36,14 @@
 {"level":"error","message":"Error al obtener usuario 123: mongoose is not defined","timestamp":"2025-06-25T21:06:06.250Z"}
 {"level":"error","message":"Error al obtener usuario 1234: mongoose is not defined","timestamp":"2025-06-25T21:08:05.392Z"}
 {"level":"warn","message":"Intento de actualizar usuario inexistente: ID 638bb233f7504b3dedc9387e","timestamp":"2025-06-25T21:42:44.547Z"}
+{"level":"warn","message":"¡Alerta!","timestamp":"2025-07-01T19:05:50.453Z"}
+{"level":"error","message":"Error al generar usuarios y mascotas falsas: User validation failed: first_name: Path `first_name` is required.","timestamp":"2025-07-01T19:18:22.452Z"}
+{"level":"error","message":"Error al crear mascota: petsRepository is not defined","timestamp":"2025-07-01T19:19:10.550Z"}
+{"level":"error","message":"Error al crear mascota: petsRepository is not defined","timestamp":"2025-07-01T19:20:33.663Z"}
+{"level":"error","message":"Error al crear mascota: petsRepository is not defined","timestamp":"2025-07-01T19:24:25.793Z"}
+{"level":"error","message":"Error al crear mascota: petsRepository is not defined","timestamp":"2025-07-01T19:25:42.467Z"}
+{"level":"error","message":"Error al crear mascota: petsRepository is not defined","timestamp":"2025-07-01T19:26:38.210Z"}
+{"level":"error","message":"Error al crear mascota: petsRepository is not defined","timestamp":"2025-07-01T20:11:40.857Z"}
+{"level":"error","message":"Error al crear mascota: petsRepository is not defined","timestamp":"2025-07-01T20:16:09.789Z"}
+{"level":"error","message":"Error al crear mascota: petsRepository is not defined","timestamp":"2025-07-01T20:22:30.492Z"}
+{"level":"error","message":"Error al crear mascota: petsRepository is not defined","timestamp":"2025-07-01T20:23:25.610Z"}

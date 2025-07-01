@@ -1,14 +1,29 @@
-import GenericRepository from "./generic.repository.js";
-
-export default class UserRepository extends GenericRepository {
+export default class UserRepository {
   constructor(dao) {
-    super(dao);
+    this.dao = dao;
   }
 
-  getUserByEmail = (email) => {
-    return this.getBy({ email });
-  };
-  getUserById = (id) => {
-    return this.getBy({ _id: id });
-  };
+  async getAll() {
+    return await this.dao.get({});
+  }
+
+  async getUserById(id) {
+    return await this.dao.getBy({ _id: id });
+  }
+
+  async getUserByEmail(email) {
+    return await this.dao.getBy({ email });
+  }
+
+  async create(data) {
+    return await this.dao.save(data);
+  }
+
+  async update(id, data) {
+    return await this.dao.update(id, data);
+  }
+
+  async delete(id) {
+    return await this.dao.delete(id);
+  }
 }

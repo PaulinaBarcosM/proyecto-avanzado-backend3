@@ -1,4 +1,8 @@
-import { usersService } from "../services/index.js";
+import UsersDAO from "../dao/users.dao.js";
+import UsersRepository from "../repository/users.repository.js";
+import UserService from "../services/users.service.js";
+
+const usersService = new UserService(new UsersRepository(new UsersDAO()));
 
 // GET /api/users
 const getAllUsers = async (req, res) => {

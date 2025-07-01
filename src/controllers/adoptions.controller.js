@@ -1,13 +1,17 @@
-import {
-  adoptionsService,
-  petsService,
-  usersService,
-} from "../services/index.js";
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
+import AdoptionDAO from "../dao/adoption.dao.js";
+import AdoptionRepository from "../repository/adoption.repository.js";
+import AdoptionService from "../services/adoption.service.js";
+import PetsService from "../services/pets.service.js";
+import UserService from "../services/users.service.js";
+
+const adoptionService = new AdoptionService(
+  new AdoptionRepository(new AdoptionDAO())
+);
 
 const getAllAdoptions = async (req, res) => {
   try {
-    const result = await adoptionsService.getAll();
+    const result = await adoptionService.getAll();
     req.logger.info("Se obtuvieron todas las adopciones");
     res.send({ status: "success", payload: result });
   } catch (error) {
@@ -27,7 +31,7 @@ const getAdoption = async (req, res) => {
       return res.status(400).send({ status: "error", error: "ID inválido" });
     }
 
-    const adoption = await adoptionsService.getBy({ _id: adoptionId });
+    const adoption = await adoptionService.getBy({ _id: adoptionId });
     if (!adoption) {
       req.logger.warn(`Adopción no encontrada: ID ${adoptionId}`);
       return res
@@ -75,9 +79,9 @@ const createAdoption = async (req, res) => {
     }
 
     user.pets.push(pet._id);
-    await usersService.update(user._id, { pets: user.pets });
-    await petsService.update(pet._id, { adopted: true, owner: user._id });
-    await adoptionsService.create({ owner: user._id, pet: pet._id });
+    await UserService.update(user._id, { pets: user.pets });
+    await PetsService.update(pet._id, { adopted: true, owner: user._id });
+    await AdoptionService.create({ owner: user._id, pet: pet._id });
 
     req.logger.info(`Mascota adoptada: Pet ${pet._id} por User ${user._id}`);
     res.send({ status: "success", message: "Pet adopted" });

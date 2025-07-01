@@ -30,7 +30,7 @@ app.use("/apidocs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 const startServer = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGO_URL);
     console.log("Conectado a MongoDB");
 
     app.listen(PORT, () => {

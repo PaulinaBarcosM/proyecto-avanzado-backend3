@@ -1,4 +1,4 @@
-export default class PetRepository extends GenericRepository {
+class PetsRepository {
   constructor(dao) {
     this.dao = dao;
   }
@@ -23,3 +23,5 @@ export default class PetRepository extends GenericRepository {
     return await this.dao.delete(id);
   }
 }
+
+export default PetsRepository;

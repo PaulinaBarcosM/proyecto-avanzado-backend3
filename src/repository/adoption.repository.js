@@ -1,7 +1,25 @@
-import GenericRepository from "./generic.repository.js";
-
-export default class AdoptionRepository extends GenericRepository {
+export default class AdoptionRepository {
   constructor(dao) {
-    super(dao);
+    this.dao = dao;
+  }
+
+  async getAll() {
+    return await this.dao.get();
+  }
+
+  async getById(id) {
+    return await this.dao.getBy({ _id: id });
+  }
+
+  async create(data) {
+    return await this.dao.save(data);
+  }
+
+  async update(id, data) {
+    return await this.dao.update(id, data);
+  }
+
+  async delete(id) {
+    return await this.dao.delete(id);
   }
 }
