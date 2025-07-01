@@ -1,6 +1,6 @@
 import UsersRepository from "../repository/users.repository.js";
 import UsersDAO from "../dao/users.dao.js";
-import SessionsService from "../services/sessions.services.js";
+import SessionsService from "../services/sessions.service.js";
 
 const sessionsService = new SessionsService(
   new UsersRepository(new UsersDAO())

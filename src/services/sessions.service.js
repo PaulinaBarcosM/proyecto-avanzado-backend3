@@ -1,4 +1,4 @@
-import UsersDTO from "../dto/users.dto";
+import UsersDTO from "../dto/users.dto.js";
 import { createHash, passwordValidation } from "../utils/index.js";
 import jwt from "jsonwebtoken";
 
