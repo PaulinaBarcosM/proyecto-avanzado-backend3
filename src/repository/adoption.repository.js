@@ -1,4 +1,4 @@
-export default class AdoptionRepository {
+class AdoptionRepository {
   constructor(dao) {
     this.dao = dao;
   }
@@ -23,3 +23,5 @@ export default class AdoptionRepository {
     return await this.dao.delete(id);
   }
 }
+
+export default AdoptionRepository;

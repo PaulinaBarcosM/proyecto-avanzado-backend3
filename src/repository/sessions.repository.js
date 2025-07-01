@@ -1,17 +1,9 @@
-class UserRepository {
+class SessionsRepository {
   constructor(dao) {
     this.dao = dao;
   }
 
-  async getAll() {
-    return await this.dao.get({});
-  }
-
-  async getUserById(id) {
-    return await this.dao.getBy({ _id: id });
-  }
-
-  async getUserByEmail(email) {
+  async getByEmail(email) {
     return await this.dao.getBy({ email });
   }
 
@@ -28,4 +20,4 @@ class UserRepository {
   }
 }
 
-export default UserRepository;
+export default SessionsRepository;

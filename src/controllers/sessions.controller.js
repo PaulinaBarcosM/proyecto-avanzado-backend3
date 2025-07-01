@@ -1,45 +1,32 @@
-import UsersService from "../services/users.service.js";
 import UsersRepository from "../repository/users.repository.js";
 import UsersDAO from "../dao/users.dao.js";
-import { createHash, passwordValidation } from "../utils/index.js";
-import jwt from "jsonwebtoken";
+import SessionsService from "../services/sessions.services.js";
 
-const usersService = new UsersService(new UsersRepository(new UsersDAO()));
+const sessionsService = new SessionsService(
+  new UsersRepository(new UsersDAO())
+);
 
 const register = async (req, res) => {
   try {
     const { first_name, last_name, email, password } = req.body;
+
     if (!first_name || !last_name || !email || !password) {
       req.logger.warn("Campos incompletos en registro");
-      return res
-        .status(400)
-        .send({ status: "error", error: "Incomplete values" });
+      return res.status(400).send({ status: "error", error: "Faltan datos" });
     }
 
-    const exists = await usersService.getUserByEmail(email);
-    if (exists) {
-      req.logger.warn(`Intento de registrar un usuario ya existente: ${email}`);
-      return res
-        .status(400)
-        .send({ status: "error", error: "User already exists" });
-    }
-
-    const hashedPassword = await createHash(password);
-    const user = {
+    const newUser = await sessionsService.register({
       first_name,
       last_name,
       email,
-      password: hashedPassword,
-    };
-    const result = await usersService.create(user);
+      password,
+    });
 
-    req.logger.info(`Usuario registrado: ${email}`);
-    res.send({ status: "success", payload: result._id });
+    req.logger.info(`Usuario registrado con éxito: ${email}`);
+    res.send({ status: "success", payload: newUser._id });
   } catch (error) {
     req.logger.error(`Error al registrar usuario: ${error.message}`);
-    res
-      .status(500)
-      .send({ status: "error", error: "Error interno del servidor" });
+    res.status(400).send({ status: "error", error: error.message });
   }
 };
 
@@ -50,102 +37,29 @@ const login = async (req, res) => {
       req.logger.warn("Login con campos incompletos");
       return res
         .status(400)
-        .send({ status: "error", error: "Incomplete values" });
+        .send({ status: "error", error: "Faltan datos obligatorios" });
     }
 
-    const user = await usersService.getUserByEmail(email);
-    if (!user) {
-      req.logger.warn(`Login fallido: usuario no existe (${email})`);
-      return res
-        .status(404)
-        .send({ status: "error", error: "User doesn't exist" });
-    }
+    const token = await sessionsService.login(email, password);
 
-    const isValidPassword = await passwordValidation(user, password);
-    if (!isValidPassword) {
-      req.logger.warn(`Login fallido: contraseña incorrecta (${email})`);
-      return res
-        .status(400)
-        .send({ status: "error", error: "Incorrect password" });
-    }
-
-    const userDto = UserDTO.getUserTokenFrom(user);
-    const token = jwt.sign(userDto, "tokenSecretJWT", { expiresIn: "1h" });
-
-    req.logger.info(`Usuario logueado: ${email}`);
+    req.logger.info(`Login exitoso del usuario: ${email}`);
     res
       .cookie("coderCookie", token, { maxAge: 3600000 })
-      .send({ status: "success", message: "Logged in" });
+      .send({ status: "success", message: "Sesión iniciada correctamente" });
   } catch (error) {
     req.logger.error(`Error en login: ${error.message}`);
-    res
-      .status(500)
-      .send({ status: "error", error: "Error interno del servidor" });
+    res.status(400).send({ status: "error", error: error.message });
   }
 };
 
 const current = async (req, res) => {
   try {
     const cookie = req.cookies["coderCookie"];
-    const user = jwt.verify(cookie, "tokenSecretJWT");
+    const user = sessionsService.verifyToken(cookie);
+
     res.send({ status: "success", payload: user });
   } catch (error) {
-    req.logger.error(`Error al verificar usuario actual: ${error.message}`);
-    res
-      .status(401)
-      .send({ status: "error", error: "Token inválido o expirado" });
-  }
-};
-
-const unprotectedLogin = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    if (!email || !password) {
-      req.logger.warn("Unprotected login con campos incompletos");
-      return res
-        .status(400)
-        .send({ status: "error", error: "Incomplete values" });
-    }
-
-    const user = await usersService.getUserByEmail(email);
-    if (!user) {
-      req.logger.warn(`Unprotected login: usuario no encontrado (${email})`);
-      return res
-        .status(404)
-        .send({ status: "error", error: "User doesn't exist" });
-    }
-
-    const isValidPassword = await passwordValidation(user, password);
-    if (!isValidPassword) {
-      req.logger.warn(`Unprotected login: contraseña incorrecta (${email})`);
-      return res
-        .status(400)
-        .send({ status: "error", error: "Incorrect password" });
-    }
-
-    const token = jwt.sign(user, "tokenSecretJWT", { expiresIn: "1h" });
-
-    req.logger.info(`Usuario logueado sin protección: ${email}`);
-    res
-      .cookie("unprotectedCookie", token, { maxAge: 3600000 })
-      .send({ status: "success", message: "Unprotected Logged in" });
-  } catch (error) {
-    req.logger.error(`Error en unprotected login: ${error.message}`);
-    res
-      .status(500)
-      .send({ status: "error", error: "Error interno del servidor" });
-  }
-};
-
-const unprotectedCurrent = async (req, res) => {
-  try {
-    const cookie = req.cookies["unprotectedCookie"];
-    const user = jwt.verify(cookie, "tokenSecretJWT");
-    res.send({ status: "success", payload: user });
-  } catch (error) {
-    req.logger.error(
-      `Error al verificar unprotected current: ${error.message}`
-    );
+    req.logger.error(`Error al obtener usuario actual: ${error.message}`);
     res
       .status(401)
       .send({ status: "error", error: "Token inválido o expirado" });
@@ -153,10 +67,7 @@ const unprotectedCurrent = async (req, res) => {
 };
 
 export default {
-  current,
-  login,
   register,
+  login,
   current,
-  unprotectedLogin,
-  unprotectedCurrent,
 };
