@@ -11,12 +11,7 @@ import AdoptionDAO from "../../src/dao/adoption.dao.js";
 import PetModel from "../../src/models/pets.model.js";
 import AdoptionModel from "../../src/models/adoption.model.js";
 import UserModel from "../../src/models/users.model.js";
-import {
-  mockPet,
-  mockAdoption,
-  mockAdoptionInDB,
-  mockUpdatedAdoption,
-} from "../mocks/mock.adoption.test.js";
+import { mockPet, mockUpdatedAdoption } from "../mocks/mock.adoption.test.js";
 import { baseUser } from "../mocks/mock.user.test.js";
 
 mongoose.connect(process.env.MONGO_URL);
