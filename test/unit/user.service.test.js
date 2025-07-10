@@ -5,7 +5,7 @@ import { userWithPets, userUpdateService } from "../mocks/mock.user.test.js";
 
 const expect = chai.expect;
 
-describe("Testing UserService", function () {
+describe("Testing User Service", function () {
   const mockUser = userWithPets;
   const _id = mockUser._id;
   let mockRepository;

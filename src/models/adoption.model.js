@@ -12,6 +12,7 @@ const adoptionSchema = new mongoose.Schema(
       ref: "Pet",
       required: true,
     },
+    reason: { type: String, required: false },
   },
   {
     timestamps: true,
