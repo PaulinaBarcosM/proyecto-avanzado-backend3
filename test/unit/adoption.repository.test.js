@@ -4,11 +4,7 @@ import AdoptionRepository from "../../src/repository/adoption.repository.js";
 import AdoptionDAO from "../../src/dao/adoption.dao.js";
 import PetModel from "../../src/models/pets.model.js";
 import UserModel from "../../src/models/users.model.js";
-import {
-  mockPet,
-  mockAdoption,
-  mockUpdatedAdoption,
-} from "../mocks/mock.adoption.test.js";
+import { mockPet } from "../mocks/mock.adoption.test.js";
 import { baseUser } from "../mocks/mock.user.test.js";
 
 const expect = chai.expect;

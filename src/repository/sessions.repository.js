@@ -3,6 +3,10 @@ class SessionsRepository {
     this.dao = dao;
   }
 
+  async getUserByEmail(email) {
+    return await this.dao.getBy({ email });
+  }
+
   async getByEmail(email) {
     return await this.dao.getBy({ email });
   }

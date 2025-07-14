@@ -1,10 +1,9 @@
-import UsersRepository from "../repository/users.repository.js";
+import SessionsRepository from "../repository/sessions.repository.js";
 import UsersDAO from "../dao/users.dao.js";
 import SessionsService from "../services/sessions.service.js";
-import UsersDTO from "../dto/users.dto.js";
 
 const sessionsService = new SessionsService(
-  new UsersRepository(new UsersDAO())
+  new SessionsRepository(new UsersDAO())
 );
 
 const register = async (req, res) => {
@@ -34,6 +33,7 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log("Login recibido con:", email, password);
     if (!email || !password) {
       req.logger.warn("Login con campos incompletos");
       return res
@@ -41,11 +41,13 @@ const login = async (req, res) => {
         .send({ status: "error", error: "Faltan datos obligatorios" });
     }
 
-    const token = await sessionsService.login(email, password);
+    const { token, user } = await sessionsService.login(email, password);
     req.logger.info(`Login exitoso del usuario: ${email}`);
-    res
-      .cookie("coderCookie", token, { maxAge: 3600000 })
-      .send({ status: "success", message: "Sesión iniciada correctamente" });
+    res.cookie("coderCookie", token, { maxAge: 3600000 }).send({
+      status: "success",
+      message: "Sesión iniciada correctamente",
+      data: { token, user },
+    });
   } catch (error) {
     req.logger.error(`Error en login: ${error.message}`);
     res.status(400).send({ status: "error", error: error.message });
