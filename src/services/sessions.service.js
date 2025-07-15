@@ -21,12 +21,9 @@ class SessionsService {
 
   async login(email, password) {
     const user = await this.repository.getUserByEmail(email);
-    console.log("Usuario encontrado en login:", user);
     if (!user) throw new Error("El usuario no existe");
 
-    console.log("Password guardado en DB:", user.password);
-    const isValidPassword = await passwordValidation(user.password, password);
-    console.log("Validación de contraseña:", isValidPassword);
+    const isValidPassword = await passwordValidation(password, user.password);
     if (!isValidPassword) throw new Error("Contraseña incorrecta");
 
     const userDto = UsersDTO.getUserTokenFrom(user);

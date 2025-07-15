@@ -17,24 +17,26 @@ describe("Testing funcional Users", function () {
   let userId;
 
   beforeEach(async function () {
-    this.timeout(5000);
+    this.timeout(10000);
+    console.log("Antes de borrar usuarios");
     await mongoose.connection.collection("users").deleteMany({});
+    console.log("Usuarios borrados");
 
     const register = await requester
       .post("/api/sessions/register")
       .send(baseUser);
-    //console.log("REGISTER RESPONSE:", register.status, register.body);
+    console.log("Registro hecho, status:", register.status);
     expect(register.status).to.be.oneOf([200, 201]);
 
-    const login = await requester.post("/api/sessions/login").send({
-      email: baseUser.email,
-      password: baseUser.password,
-    });
-    //console.log("LOGIN RESPONSE:", login.body);
+    const login = await requester
+      .post("/api/sessions/login")
+      .send({ email: baseUser.email, password: baseUser.password });
+    console.log("Login hecho, status:", login.status);
     expect(login.status).to.equal(200);
 
     token = login.body.data.token;
     userId = login.body.data.user._id;
+    console.log("Token y userId guardados");
   });
 
   after(async function () {

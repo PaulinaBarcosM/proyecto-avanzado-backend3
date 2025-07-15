@@ -1,9 +1,9 @@
-import SessionsRepository from "../repository/sessions.repository.js";
+import UsersRepository from "../repository/users.repository.js";
 import UsersDAO from "../dao/users.dao.js";
 import SessionsService from "../services/sessions.service.js";
 
 const sessionsService = new SessionsService(
-  new SessionsRepository(new UsersDAO())
+  new UsersRepository(new UsersDAO())
 );
 
 const register = async (req, res) => {

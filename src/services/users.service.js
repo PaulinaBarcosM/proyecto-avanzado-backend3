@@ -5,7 +5,7 @@ class UserService {
     this.repository = repository;
   }
 
-  async getAllUsers() {
+  async getAll() {
     const users = await this.repository.getAll();
     return users.map((user) => new UsersDTO(user));
   }

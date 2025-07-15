@@ -71,3 +71,21 @@
 {"level":"error","message":"Error en login: data and hash arguments required","timestamp":"2025-07-14T21:26:51.881Z"}
 {"level":"error","message":"Error en login: data and hash arguments required","timestamp":"2025-07-14T21:29:55.956Z"}
 {"level":"error","message":"Error en login: data and hash arguments required","timestamp":"2025-07-14T21:30:09.535Z"}
+{"level":"error","message":"Error en login: data and hash arguments required","timestamp":"2025-07-14T21:55:54.626Z"}
+{"level":"error","message":"Error en login: El usuario no existe","timestamp":"2025-07-14T21:57:46.398Z"}
+{"level":"error","message":"Error en login: data and hash arguments required","timestamp":"2025-07-14T22:06:29.720Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: usersService.getAll is not a function","timestamp":"2025-07-14T22:10:44.877Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: usersService.getAll is not a function","timestamp":"2025-07-14T22:13:59.877Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: usersService.getAll is not a function","timestamp":"2025-07-14T22:14:48.412Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-14T22:17:06.166Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-14T22:19:44.083Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-14T22:20:18.056Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-14T22:20:39.325Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-14T22:27:16.623Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:21:58.042Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:28:40.512Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:30:35.949Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:32:41.789Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:33:03.292Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:34:02.577Z"}
+{"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:38:44.554Z"}
