@@ -28,7 +28,7 @@ describe("Testing User Service", function () {
   });
 
   it("Debe retornar todos los usuarios como DTO", async function () {
-    const result = await userService.getAllUsers();
+    const result = await userService.getAll();
     expect(result).to.be.an("array").with.length(1);
     expect(result[0]).to.have.property("email", "paula@correo.com");
   });
@@ -93,6 +93,7 @@ describe("Testing User Service", function () {
   it("Debe devolver los datos del token desde el DTO", async function () {
     const result = userService.getUserTokenData(userWithPets);
     expect(result).to.deep.equal({
+      _id: "abc123",
       name: "Paula Barcos",
       role: "user",
       email: "paula@correo.com",

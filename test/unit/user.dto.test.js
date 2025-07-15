@@ -11,15 +11,13 @@ const expect = chai.expect;
 
 describe("Testing de utilidades y DTO de usuarios", () => {
   describe("Testing de contraseñas", () => {
-    //aca quiero comparar la contraseña original con la que deberia ser
     it("Debe comparar la contraseña hasheada con la original", async function () {
       const mockUser = userForDTO;
       const hashedPassword = await createHash(mockUser.password);
 
       const user = { ...mockUser, password: hashedPassword };
-      //que la contraeña hasheada de arriba sea igual a la contraseña hasheada que va a estar en la base de datos:
-      const match = await passwordValidation(user, mockUser.password);
-      expect(match).to.be.true; //yo voy a esperar que este match sea true
+      const match = await passwordValidation(mockUser.password, hashedPassword);
+      expect(match).to.be.true;
     });
 
     it("Debe fallar si la contraseña hasheada fue alterada", async function () {
@@ -27,9 +25,10 @@ describe("Testing de utilidades y DTO de usuarios", () => {
       const hashedPassword = await createHash(mockUser.password);
       const alteredPassword = hashedPassword.slice(0, -1) + "X";
 
-      const user = { ...mockUser, password: alteredPassword };
-
-      const match = await passwordValidation(user, hashedPassword);
+      const match = await passwordValidation(
+        mockUser.password,
+        alteredPassword
+      );
       expect(match).to.be.false;
     });
   });
@@ -58,6 +57,7 @@ describe("Testing de utilidades y DTO de usuarios", () => {
       const tokenData = UsersDTO.getUserTokenFrom(mockUser);
 
       expect(tokenData).to.deep.equal({
+        _id: "abc123",
         name: "Paula Barcos",
         role: "user",
         email: "paula@correo.com",

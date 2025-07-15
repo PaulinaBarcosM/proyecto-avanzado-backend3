@@ -7,16 +7,21 @@ import Assert from "assert";
 import chai from "chai";
 import { baseUser } from "../mocks/mock.user.test.js";
 
-mongoose.connect(process.env.MONGO_URL);
-
 const assert = Assert.strict;
 const expect = chai.expect;
 
 describe("Testing Users DAO con CHAI", function () {
-  before(function () {
+  before(async function () {
+    await mongoose.connect(process.env.MONGO_URL);
+
     this.userDao = new UsersDAO();
     this.mockUser = baseUser;
   });
+
+  after(async function () {
+    await mongoose.connection.close();
+  });
+
   beforeEach(async function () {
     this.timeout(5000);
     await mongoose.connection.collection("users").deleteMany({});

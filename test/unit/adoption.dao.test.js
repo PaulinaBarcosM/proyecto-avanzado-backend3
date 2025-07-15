@@ -41,11 +41,16 @@ describe("Testing Adoption DAO", function () {
 
   beforeEach(async function () {
     await mongoose.connection.collections.adoptions.drop().catch(() => {});
+    await this.adoptionDao.save(this.mockAdoption);
     this.timeout(5000);
   });
 
+  after(async function () {
+    await mongoose.connection.close();
+  });
+
   it("El método get debe devolver un arreglo", async function () {
-    const result = await this.adoptionDao.get();
+    const result = await this.adoptionDao.get({});
     expect(result).to.be.an("array");
   });
 

@@ -8,11 +8,18 @@ import { mockPet } from "../mocks/mock.adoption.test.js";
 import { baseUser } from "../mocks/mock.user.test.js";
 
 const expect = chai.expect;
-mongoose.connect(process.env.MONGO_URL);
 
 describe("Testing Adoption Repository", function () {
   const dao = new AdoptionDAO();
   const repo = new AdoptionRepository(dao);
+
+  before(async function () {
+    await mongoose.connect(process.env.MONGO_URL);
+  });
+
+  after(async function () {
+    await mongoose.connection.close();
+  });
 
   beforeEach(async function () {
     this.timeout(5000);

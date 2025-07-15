@@ -14,11 +14,17 @@ import UserModel from "../../src/models/users.model.js";
 import { mockPet, mockUpdatedAdoption } from "../mocks/mock.adoption.test.js";
 import { baseUser } from "../mocks/mock.user.test.js";
 
-mongoose.connect(process.env.MONGO_URL);
-
 const service = new AdoptionService(new AdoptionRepository(new AdoptionDAO()));
 
 describe("Testing Adoption Service", function () {
+  before(async function () {
+    await mongoose.connect(process.env.MONGO_URL);
+  });
+
+  after(async function () {
+    await mongoose.connection.close();
+  });
+
   beforeEach(async function () {
     this.timeout(5000);
     await mongoose.connection.collections.adoptions.drop().catch(() => {});
