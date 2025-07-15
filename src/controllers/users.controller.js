@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import UsersDAO from "../dao/users.dao.js";
 import UsersRepository from "../repository/users.repository.js";
 import UserService from "../services/users.service.js";
@@ -50,6 +51,19 @@ const updateUser = async (req, res) => {
   try {
     const updateBody = req.body;
     const userId = req.params.uid;
+
+    if (!updateBody.first_name || !updateBody.last_name || !updateBody.email) {
+      req.logger.warn(
+        `Faltan campos obligatorios para actualizar usuario: ${JSON.stringify(
+          updateBody
+        )}`
+      );
+      return res.status(400).send({
+        status: "error",
+        error: "Faltan campos obligatorios: first_name, last_name y email",
+      });
+    }
+
     const user = await usersService.getUserById(userId);
     if (!user) {
       req.logger.warn(
@@ -57,7 +71,7 @@ const updateUser = async (req, res) => {
       );
       return res.status(404).send({ status: "error", error: "User not found" });
     }
-    const result = await usersService.update(userId, updateBody);
+    const result = await usersService.updateUser(userId, updateBody);
     req.logger.info(`Usuario actualizado: ID ${userId}`);
     res.send({ status: "success", message: "User updated" });
   } catch (error) {
@@ -74,12 +88,18 @@ const updateUser = async (req, res) => {
 const deleteUser = async (req, res) => {
   try {
     const userId = req.params.uid;
-    const result = await usersService.getUserById(userId);
+
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      req.logger.warn(`ID inválido recibido para delete: ${userId}`);
+      return res.status(400).send({ status: "error", error: "ID inválido" });
+    }
+
+    const user = await usersService.getUserById(userId);
     if (!user) {
       req.logger.warn(`Intento de eliminar usuario inexistente: ID ${userId}`);
       return res.status(404).send({});
     }
-    await usersService.delete(userId);
+    await usersService.deleteUser(userId);
     req.logger.info(`Usuario eliminado: ID ${userId}`);
     res.send({ status: "success", message: "User deleted" });
   } catch (error) {

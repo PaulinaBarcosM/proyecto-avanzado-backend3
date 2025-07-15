@@ -89,3 +89,29 @@
 {"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:33:03.292Z"}
 {"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:34:02.577Z"}
 {"level":"error","message":"Error al obtener todos los usuarios: this.repository.getAllUsers is not a function","timestamp":"2025-07-15T01:38:44.554Z"}
+{"level":"error","message":"Error al obtener usuario undefined: mongoose is not defined","timestamp":"2025-07-15T01:52:38.882Z"}
+{"level":"error","message":"Error al obtener usuario undefined: mongoose is not defined","timestamp":"2025-07-15T01:56:33.143Z"}
+{"level":"warn","message":"ID inválido recibido: undefined","timestamp":"2025-07-15T01:57:46.107Z"}
+{"level":"warn","message":"ID inválido recibido: undefined","timestamp":"2025-07-15T02:01:17.656Z"}
+{"level":"warn","message":"ID inválido recibido: undefined","timestamp":"2025-07-15T02:02:46.755Z"}
+{"level":"error","message":"Error al actualizar usuario 6875b9eb3bfdef9a8b8b049a: usersService.update is not a function","timestamp":"2025-07-15T02:16:11.942Z"}
+{"level":"error","message":"Error al actualizar usuario 6875bac93bfdef9a8b8b04a9: usersService.update is not a function","timestamp":"2025-07-15T02:19:53.499Z"}
+{"level":"error","message":"Error al eliminar usuario 6875bac93bfdef9a8b8b04ae: user is not defined","timestamp":"2025-07-15T02:19:53.938Z"}
+{"level":"error","message":"Error al eliminar usuario 6875bb9425eb2e67e9f919f6: user is not defined","timestamp":"2025-07-15T02:23:16.528Z"}
+{"level":"error","message":"Error al eliminar usuario 6875bd84be5521f770d2feab: usersService.delete is not a function","timestamp":"2025-07-15T02:31:32.963Z"}
+{"level":"error","message":"Error al eliminar usuario 6875bebbbe5521f770d2fec1: usersService.delete is not a function","timestamp":"2025-07-15T02:36:44.196Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 6875bfa4207619e8cfe52a74","timestamp":"2025-07-15T02:40:36.745Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"Actualizada\",\"email\":\"nueva@correo.com\"}","timestamp":"2025-07-15T02:48:57.702Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-15T02:48:58.092Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 6875c19aa61d7cdec06346e2","timestamp":"2025-07-15T02:48:58.647Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"Actualizada\",\"email\":\"nueva@correo.com\"}","timestamp":"2025-07-15T02:50:14.732Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 6875c1e6a61d7cdec06346f7","timestamp":"2025-07-15T02:50:15.259Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"Actualizada\",\"email\":\"nueva@correo.com\"}","timestamp":"2025-07-15T02:56:00.753Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-15T02:56:01.212Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 6875c3417b67d438e9b268d1","timestamp":"2025-07-15T02:56:01.869Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-15T02:56:02.319Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 6875c4c737d9ace2b4abf931","timestamp":"2025-07-15T03:02:31.888Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-15T03:02:32.347Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-15T03:03:23.287Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 6875c4fb37d9ace2b4abf952","timestamp":"2025-07-15T03:03:23.869Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-15T03:03:24.332Z"}

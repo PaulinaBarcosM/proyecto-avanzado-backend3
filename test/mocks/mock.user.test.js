@@ -42,5 +42,10 @@ export const alteredUser = {
 
 export const userUpdateService = {
   first_name: "Actualizada",
+  last_name: "Barcos",
   email: "nueva@correo.com",
+};
+
+export const incompleteUpdate = {
+  first_name: "SoloNombre",
 };
