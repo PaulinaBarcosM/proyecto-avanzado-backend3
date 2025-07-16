@@ -4,6 +4,14 @@ import { baseUser } from "./mock.user.test.js";
 export const mockPetId = new mongoose.Types.ObjectId();
 export const mockInvalidId = "123abc";
 
+export const mockPetTwo = {
+  _id: mockPetId,
+  name: "Pupé",
+  specie: "dog",
+  breed: "Beagle",
+  age: { years: 9, months: 4 },
+};
+
 export const mockPet = {
   _id: mockPetId,
   name: "Firulais",
@@ -28,4 +36,8 @@ export const mockAdoptionInDB = {
 
 export const mockUpdatedAdoption = {
   reason: "Cambio de dueño",
+};
+
+export const mockPetUpdate = {
+  name: "Pupé Actualizado",
 };

@@ -1,6 +1,5 @@
 import chai from "chai";
 import UserService from "../../src/services/users.service.js";
-import UsersDTO from "../../src/dto/users.dto.js";
 import { userWithPets, userUpdateService } from "../mocks/mock.user.test.js";
 
 const expect = chai.expect;
