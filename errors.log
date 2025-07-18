@@ -244,3 +244,120 @@
 {"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T04:06:33.544Z"}
 {"level":"warn","message":"Usuario no encontrado: ID 6879c8496f5d02dbc4ada4d4","timestamp":"2025-07-18T04:06:34.123Z"}
 {"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T04:06:34.579Z"}
+{"level":"error","message":"Error al crear adopción: User not found","timestamp":"2025-07-18T16:05:29.075Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T16:05:32.235Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T16:05:33.045Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T16:05:38.847Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a70d3385958d69187a2ef","timestamp":"2025-07-18T16:05:39.721Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T16:05:40.652Z"}
+{"level":"error","message":"Error al crear adopción: User not found","timestamp":"2025-07-18T16:09:37.430Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T16:09:40.553Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T16:09:40.745Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T16:09:44.723Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a71c8385958d69187a339","timestamp":"2025-07-18T16:09:45.505Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T16:09:46.409Z"}
+{"level":"error","message":"Error al crear adopción: User not found","timestamp":"2025-07-18T16:20:48.849Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T16:20:51.765Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T16:20:51.980Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T16:20:55.784Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a7468385958d69187a383","timestamp":"2025-07-18T16:20:56.585Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T16:20:57.285Z"}
+{"level":"error","message":"Error al crear adopción: User not found","timestamp":"2025-07-18T16:25:56.525Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T16:26:00.233Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T16:26:00.606Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T16:26:04.981Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a759d385958d69187a3cd","timestamp":"2025-07-18T16:26:05.943Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T16:26:06.688Z"}
+{"level":"error","message":"Error al crear adopción: adoptionService.create is not a function","timestamp":"2025-07-18T16:27:01.451Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T16:27:04.862Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T16:27:05.063Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T16:27:08.522Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a75dcecd254e41ef71182","timestamp":"2025-07-18T16:27:09.278Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T16:27:09.806Z"}
+{"level":"error","message":"Error al registrar usuario: sessionsServicerepository is not defined","timestamp":"2025-07-18T16:33:56.505Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T16:34:00.322Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T16:34:00.826Z"}
+{"level":"error","message":"Error al registrar usuario: sessionsServicerepository is not defined","timestamp":"2025-07-18T16:34:04.279Z"}
+{"level":"error","message":"Error al registrar usuario: sessionsServicerepository is not defined","timestamp":"2025-07-18T16:56:33.252Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T16:56:35.250Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T16:56:35.406Z"}
+{"level":"error","message":"Error al registrar usuario: sessionsServicerepository is not defined","timestamp":"2025-07-18T16:56:36.433Z"}
+{"level":"error","message":"Error al registrar usuario: sessionsServicerepository is not defined","timestamp":"2025-07-18T16:59:10.715Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T16:59:12.665Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T16:59:12.826Z"}
+{"level":"error","message":"Error al registrar usuario: sessionsServicerepository is not defined","timestamp":"2025-07-18T16:59:14.024Z"}
+{"level":"error","message":"Error al crear adopción: adoptionService.create is not a function","timestamp":"2025-07-18T16:59:32.330Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T16:59:34.416Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T16:59:34.578Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T16:59:37.322Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a7d79c7abcb7909786165","timestamp":"2025-07-18T16:59:37.927Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T16:59:38.405Z"}
+{"level":"error","message":"Error al crear adopción: adoptionService.create is not a function","timestamp":"2025-07-18T17:40:01.980Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T17:40:04.571Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T17:40:04.824Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T17:40:07.953Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a86f85d72fb85d98cedae","timestamp":"2025-07-18T17:40:08.575Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T17:40:09.074Z"}
+{"level":"error","message":"Error al registrar usuario: this.repository.getById is not a function","timestamp":"2025-07-18T17:52:33.089Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T17:52:35.427Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T17:52:35.645Z"}
+{"level":"error","message":"Error al registrar usuario: this.repository.getById is not a function","timestamp":"2025-07-18T17:52:36.849Z"}
+{"level":"error","message":"Error al registrar usuario: this.repository.getById is not a function","timestamp":"2025-07-18T18:00:19.502Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T18:00:22.229Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T18:00:22.427Z"}
+{"level":"error","message":"Error al registrar usuario: this.repository.getById is not a function","timestamp":"2025-07-18T18:00:23.698Z"}
+{"level":"error","message":"Error al registrar usuario: this.repository.getById is not a function","timestamp":"2025-07-18T18:01:46.139Z"}
+{"level":"error","message":"Error al crear adopción: this.repository.getById is not a function","timestamp":"2025-07-18T18:14:15.798Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T18:14:18.152Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T18:14:18.325Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T18:14:21.969Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a8efef1dc537c23ce38df","timestamp":"2025-07-18T18:14:22.736Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T18:14:23.254Z"}
+{"level":"error","message":"Error al crear adopción: this.repository.getById is not a function","timestamp":"2025-07-18T18:31:57.904Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T18:32:00.506Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T18:32:00.859Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T18:32:04.514Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a9324ce4845e325135c91","timestamp":"2025-07-18T18:32:05.253Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T18:32:05.871Z"}
+{"level":"error","message":"Error al crear adopción: this.repository.getById is not a function","timestamp":"2025-07-18T18:43:55.165Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T18:43:57.327Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T18:43:57.532Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T18:44:01.120Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687a95f15fe4795976abefc2","timestamp":"2025-07-18T18:44:01.975Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T18:44:02.724Z"}
+{"level":"error","message":"Error al crear adopción: this.repository.getById is not a function","timestamp":"2025-07-18T19:42:22.054Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T19:42:24.708Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T19:42:24.909Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T19:42:28.528Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687aa3a4b778a28ee1390de6","timestamp":"2025-07-18T19:42:29.304Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T19:42:29.854Z"}
+{"level":"error","message":"Error al crear adopción: this.repository.getById is not a function","timestamp":"2025-07-18T19:44:14.932Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T19:44:17.450Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T19:44:17.697Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T19:44:22.240Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687aa416d769c332117a6220","timestamp":"2025-07-18T19:44:22.952Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T19:44:23.674Z"}
+{"level":"error","message":"Error al crear adopción: this.repository.getById is not a function","timestamp":"2025-07-18T19:52:37.837Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T19:52:40.335Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T19:52:40.532Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T19:52:43.908Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687aa60cd769c332117a626d","timestamp":"2025-07-18T19:52:44.703Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T19:52:45.605Z"}
+{"level":"error","message":"Error al crear adopción: this.repository.getById is not a function","timestamp":"2025-07-18T19:53:18.634Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T19:53:21.263Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T19:53:21.482Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T19:53:25.209Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687aa635b3755c2a4e47288d","timestamp":"2025-07-18T19:53:26.008Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T19:53:26.744Z"}
+{"level":"error","message":"Error al crear adopción: this.repository.getById is not a function","timestamp":"2025-07-18T20:07:26.633Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T20:07:28.833Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T20:07:28.984Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T20:07:32.121Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687aa9844f0d286b951f7c66","timestamp":"2025-07-18T20:07:32.777Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T20:07:33.452Z"}
+{"level":"error","message":"Error al crear adopción: this.repository.getById is not a function","timestamp":"2025-07-18T20:14:06.766Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T20:14:09.017Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T20:14:09.212Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T20:14:12.529Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687aab1416a2c218e65818ba","timestamp":"2025-07-18T20:14:13.297Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T20:14:13.849Z"}

@@ -14,7 +14,7 @@ class AdoptionService {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       throw new Error("ID inválido");
     }
-    const adoption = await this.repository.getById(id);
+    const adoption = await this.repository.getBy({ _id: id });
     if (!adoption) throw new Error("Adopción no enontrada");
     return adoption;
   }
@@ -22,7 +22,6 @@ class AdoptionService {
   async createAdoption(data) {
     const { pet, owner } = data;
 
-    //lógica para ver si la mascota esta adoptada
     if (!mongoose.Types.ObjectId.isValid(pet)) {
       throw new Error("ID de la mascota inválido");
     }

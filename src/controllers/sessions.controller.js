@@ -1,11 +1,15 @@
 import UsersRepository from "../repository/users.repository.js";
 import UsersDAO from "../dao/users.dao.js";
 import SessionsService from "../services/sessions.service.js";
+import UsersService from "../services/users.service.js";
 
 const sessionsService = new SessionsService(
   new UsersRepository(new UsersDAO())
 );
 
+const usersService = new UsersService(new UsersRepository(new UsersDAO()));
+
+// REGISTER
 const register = async (req, res) => {
   try {
     const { first_name, last_name, email, password } = req.body;
@@ -15,25 +19,28 @@ const register = async (req, res) => {
       return res.status(400).send({ status: "error", error: "Faltan datos" });
     }
 
-    const newUser = await sessionsService.register({
+    const createdUser = await sessionsService.register({
       first_name,
       last_name,
       email,
       password,
     });
 
+    const rawUser = await usersService.getUserById(createdUser._id);
+
     req.logger.info(`Usuario registrado con éxito: ${email}`);
-    res.send({ status: "success", payload: newUser._id });
+    res.send({ status: "success", payload: rawUser });
   } catch (error) {
     req.logger.error(`Error al registrar usuario: ${error.message}`);
     res.status(500).send({ status: "error", error: error.message });
   }
 };
 
+// LOGIN
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log("Login recibido con:", email, password);
+
     if (!email || !password) {
       req.logger.warn("Login con campos incompletos");
       return res
@@ -42,6 +49,7 @@ const login = async (req, res) => {
     }
 
     const { token, user } = await sessionsService.login(email, password);
+
     req.logger.info(`Login exitoso del usuario: ${email}`);
     res.cookie("coderCookie", token, { maxAge: 3600000 }).send({
       status: "success",
@@ -54,6 +62,7 @@ const login = async (req, res) => {
   }
 };
 
+// CURRENT
 const current = async (req, res) => {
   try {
     const cookie = req.cookies["coderCookie"];
@@ -67,6 +76,7 @@ const current = async (req, res) => {
   }
 };
 
+// UNPROTECTED LOGIN
 const unprotectedLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -77,7 +87,7 @@ const unprotectedLogin = async (req, res) => {
         .send({ status: "error", error: "Valores incompletos" });
     }
 
-    const token = await sessionsService.login(email, password);
+    const { token } = await sessionsService.login(email, password);
     req.logger.info(`Usuario logueado sin protección: ${email}`);
     res
       .cookie("unprotectedCookie", token, { maxAge: 3600000 })
@@ -88,6 +98,7 @@ const unprotectedLogin = async (req, res) => {
   }
 };
 
+// UNPROTECTED CURRENT
 const unprotectedCurrent = async (req, res) => {
   try {
     const cookie = req.cookies["unprotectedCookie"];

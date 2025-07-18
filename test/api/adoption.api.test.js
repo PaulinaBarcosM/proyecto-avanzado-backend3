@@ -43,10 +43,10 @@ describe("Testing funcional Adoptions", function () {
     token = login.body.data.token;
     userId = login.body.data.user._id;
 
-    console.log("Usuario registrado:", userId);
-    console.log("Token generado:", token);
-
-    const petRes = await requester.post("/api/pets").send(mockPet);
+    const petRes = await requester
+      .post("/api/pets")
+      .set("Authorization", `Bearer ${token}`)
+      .send(mockPet);
     expect(petRes.status).to.equal(200);
     petId = petRes.body.payload._id;
   });

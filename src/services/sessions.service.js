@@ -26,9 +26,15 @@ class SessionsService {
     const isValidPassword = await passwordValidation(password, user.password);
     if (!isValidPassword) throw new Error("Contraseña incorrecta");
 
-    const userDto = UsersDTO.getUserTokenFrom(user);
-    const token = jwt.sign(userDto, "tokenSecretJWT", { expiresIn: "1h" });
-    return { token, user: userDto };
+    const tokenPayload = {
+      _id: user._id,
+      name: `${user.first_name} ${user.last_name}`,
+      role: user.role,
+      email: user.email,
+    };
+    const token = jwt.sign(tokenPayload, "tokenSecretJWT", { expiresIn: "1h" });
+
+    return { token, user };
   }
 
   verifyToken(token) {

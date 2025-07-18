@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import UsersDTO from "../dto/users.dto.js";
 
-class UserService {
+class UsersService {
   constructor(repository) {
     this.repository = repository;
   }
@@ -12,14 +12,15 @@ class UserService {
   }
 
   async getUserById(id) {
-    console.log("ID recibido:", id);
-    console.log("Es válido?", mongoose.Types.ObjectId.isValid(id));
-
-    console.log("BUSCANDO USER EN DB:", id);
-
     const user = await this.repository.getUserById(id);
-    if (!user) return null;
-    return new UsersDTO(user);
+    return user;
+  }
+
+  async getUserRawById(id) {
+    if (!mongoose.Types.ObjectId.isValid(id)) throw new Error("ID inválido");
+    const user = await this.repository.getById(id);
+    if (!user) throw new Error("Usuario no encontrado");
+    return user;
   }
 
   async getUserByEmail(email) {
@@ -54,4 +55,4 @@ class UserService {
   }
 }
 
-export default UserService;
+export default UsersService;
