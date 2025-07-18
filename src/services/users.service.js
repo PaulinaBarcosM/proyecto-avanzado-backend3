@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import UsersDTO from "../dto/users.dto.js";
 
 class UserService {
@@ -11,6 +12,11 @@ class UserService {
   }
 
   async getUserById(id) {
+    console.log("ID recibido:", id);
+    console.log("Es válido?", mongoose.Types.ObjectId.isValid(id));
+
+    console.log("BUSCANDO USER EN DB:", id);
+
     const user = await this.repository.getUserById(id);
     if (!user) return null;
     return new UsersDTO(user);

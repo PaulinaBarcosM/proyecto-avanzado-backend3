@@ -9,6 +9,10 @@ export default class UsersDAO {
     return await UserModel.findOne(params);
   }
 
+  async getUserById(id) {
+    return await UserModel.findById(id);
+  }
+
   async save(doc) {
     return await UserModel.create(doc);
   }

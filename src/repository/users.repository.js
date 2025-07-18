@@ -8,7 +8,7 @@ class UserRepository {
   }
 
   async getUserById(id) {
-    return await this.dao.getBy({ _id: id });
+    return await this.dao.getUserById(id);
   }
 
   async getUserByEmail(email) {
