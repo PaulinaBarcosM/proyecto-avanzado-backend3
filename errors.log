@@ -115,3 +115,35 @@
 {"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-15T03:03:23.287Z"}
 {"level":"warn","message":"Usuario no encontrado: ID 6875c4fb37d9ace2b4abf952","timestamp":"2025-07-15T03:03:23.869Z"}
 {"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-15T03:03:24.332Z"}
+{"level":"warn","message":"Faltan campos obligatorios para crear una mascota","timestamp":"2025-07-18T00:25:59.228Z"}
+{"level":"warn","message":"Faltan campos obligatorios para crear una mascota","timestamp":"2025-07-18T00:31:04.284Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T00:31:07.417Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687995cb80fb58106d47804a","timestamp":"2025-07-18T00:31:08.188Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T00:31:08.683Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T00:38:49.108Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 6879979980fb58106d478072","timestamp":"2025-07-18T00:38:49.728Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T00:38:50.312Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T00:49:20.016Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 68799a1080fb58106d47809e","timestamp":"2025-07-18T00:49:20.622Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T00:49:21.092Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T00:59:19.090Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 68799c6780fb58106d4780ce","timestamp":"2025-07-18T00:59:19.667Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T00:59:20.147Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T01:01:38.254Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 68799cf280fb58106d478101","timestamp":"2025-07-18T01:01:38.843Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T01:01:39.311Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T01:05:04.360Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T01:05:04.539Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T01:05:07.580Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 68799dc380fb58106d478139","timestamp":"2025-07-18T01:05:08.693Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T01:05:09.220Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T01:07:39.859Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T01:07:40.040Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T01:07:43.061Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 68799e5f80fb58106d478171","timestamp":"2025-07-18T01:07:43.655Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T01:07:44.300Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-18T01:11:19.291Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-18T01:11:19.484Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-18T01:11:23.193Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 68799f3b80fb58106d4781a9","timestamp":"2025-07-18T01:11:24.237Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-18T01:11:24.736Z"}

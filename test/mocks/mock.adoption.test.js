@@ -12,6 +12,15 @@ export const mockPetTwo = {
   age: { years: 9, months: 4 },
 };
 
+export const mockPetRequest = {
+  name: "Pupé",
+  specie: "dog",
+  breed: "Beagle",
+  color: "Brown",
+  ageYears: 9,
+  ageMonths: 4,
+};
+
 export const mockPet = {
   _id: mockPetId,
   name: "Firulais",

@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 import supertest from "supertest";
 import chai from "chai";
 import {
@@ -14,14 +14,16 @@ import UserModel from "../../src/models/users.model.js";
 const expect = chai.expect;
 const requester = supertest("http://localhost:8080");
 
-mongoose.connect(process.env.MONGO_URL);
-
 describe("Testing funcional Users", function () {
   let token;
   let userId;
 
-  beforeEach(async function () {
+  before(async function () {
     this.timeout(10000);
+    await mongoose.connect(process.env.MONGO_URL);
+  });
+
+  beforeEach(async function () {
     await mongoose.connection.collection("users").deleteMany({});
 
     const register = await requester
