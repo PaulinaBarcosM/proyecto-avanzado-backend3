@@ -49,6 +49,12 @@ describe("Testing funcional Adoptions", function () {
       .send(mockPet);
     expect(petRes.status).to.equal(200);
     petId = petRes.body.payload._id;
+
+    const adoptionRes = await requester
+      .post(`/api/adoptions/${userId}/${petId}`)
+      .set("Authorization", `Bearer ${token}`);
+    expect(adoptionRes.status).to.equal(200);
+    adoptionId = adoptionRes.body.payload._id;
   });
 
   after(async function () {
@@ -57,6 +63,8 @@ describe("Testing funcional Adoptions", function () {
   });
 
   it("GET /api/adoptions debe devolver un array vacío si no hay adopciones", async function () {
+    await mongoose.connection.collection("adoptions").deleteMany({});
+
     const res = await requester.get("/api/adoptions");
     expect(res.status).to.equal(200);
     expect(res.body.status).to.equal("success");
@@ -64,15 +72,29 @@ describe("Testing funcional Adoptions", function () {
   });
 
   it("POST /api/adoptions/:uid/:pid debe crear una adopción correctamente", async function () {
-    const res = await requester
-      .post(`/api/adoptions/${userId}/${petId}`)
-      .set("Authorization", `Bearer ${token}`);
+    const anotherPetRes = await requester
+      .post("/api/pets")
+      .set("Authorization", `Bearer ${token}`)
+      .send(mockPet);
+    expect(anotherPetRes.status).to.equal(200);
+    const anotherPetId = anotherPetRes.body.payload._id;
 
+    const res = await requester
+      .post(`/api/adoptions/${userId}/${anotherPetId}`)
+      .set("Authorization", `Bearer ${token}`);
     expect(res.status).to.equal(200);
     expect(res.body.status).to.equal("success");
     expect(res.body.message).to.equal("Pet adopted");
 
-    const adoptions = await requester.get("/api/adoptions");
-    adoptionId = adoptions.body.payload[0]._id;
+    expect(res.body.payload).to.have.property("_id");
+    adoptionId = res.body.payload._id;
+    expect(adoptionId).to.be.a("string").with.lengthOf(24);
+  });
+
+  it("GET /api/adoptions/:aid debe obtener una adopción correctamente", async function () {
+    const res = await requester.get(`/api/adoptions/${adoptionId}`);
+    expect(res.status).to.equal(200);
+    expect(res.body.status).to.equal("success");
+    expect(res.body.payload).to.have.property("_id", adoptionId);
   });
 });

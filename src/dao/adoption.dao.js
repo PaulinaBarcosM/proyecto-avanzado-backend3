@@ -6,9 +6,7 @@ export default class AdoptionDAO {
   }
 
   async getBy(params) {
-    return await AdoptionModel.findOne(params)
-      .populate("owner")
-      .populate("pet");
+    return await AdoptionModel.findOne(params);
   }
 
   async save(doc) {

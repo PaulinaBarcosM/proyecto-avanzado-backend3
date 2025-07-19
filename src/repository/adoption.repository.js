@@ -11,8 +11,8 @@ class AdoptionRepository {
     return await this.dao.getBy({ _id: id });
   }
 
-  async getBy(filter) {
-    return await this.dao.getBy(filter);
+  async getBy(params) {
+    return await this.dao.getBy(params);
   }
 
   async create(data) {

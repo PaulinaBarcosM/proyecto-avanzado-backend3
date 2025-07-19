@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import UsersDAO from "../dao/users.dao.js";
 import UsersRepository from "../repository/users.repository.js";
 import UserService from "../services/users.service.js";
+import UsersDTO from "../dto/users.dto.js";
 
 const usersService = new UserService(new UsersRepository(new UsersDAO()));
 
@@ -9,8 +10,9 @@ const usersService = new UserService(new UsersRepository(new UsersDAO()));
 const getAllUsers = async (req, res) => {
   try {
     const users = await usersService.getAll();
+    const usersDTO = users.map((user) => new UsersDTO(user));
     req.logger.info("Se obtuvieron todos los usuarios");
-    res.send({ status: "success", payload: users });
+    res.send({ status: "success", payload: usersDTO });
   } catch (error) {
     req.logger.error(`Error al obtener todos los usuarios: ${error.message}`);
     res
@@ -34,8 +36,10 @@ const getUser = async (req, res) => {
       req.logger.warn(`Usuario no encontrado: ID ${userId}`);
       return res.status(404).send({ status: "error", error: "User not found" });
     }
+
+    const usersDTO = new UsersDTO(user);
     req.logger.info(`Usuario obtenido: ID ${userId}`);
-    res.send({ status: "success", payload: user });
+    res.send({ status: "success", payload: usersDTO });
   } catch (error) {
     req.logger.error(
       `Error al obtener usuario ${req.params.uid}: ${error.message}`
@@ -71,7 +75,8 @@ const updateUser = async (req, res) => {
       );
       return res.status(404).send({ status: "error", error: "User not found" });
     }
-    const result = await usersService.updateUser(userId, updateBody);
+
+    await usersService.updateUser(userId, updateBody);
     req.logger.info(`Usuario actualizado: ID ${userId}`);
     res.send({ status: "success", message: "User updated" });
   } catch (error) {
@@ -99,6 +104,7 @@ const deleteUser = async (req, res) => {
       req.logger.warn(`Intento de eliminar usuario inexistente: ID ${userId}`);
       return res.status(404).send({});
     }
+
     await usersService.deleteUser(userId);
     req.logger.info(`Usuario eliminado: ID ${userId}`);
     res.send({ status: "success", message: "User deleted" });

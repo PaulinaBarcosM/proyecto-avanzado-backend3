@@ -14,8 +14,10 @@ class AdoptionService {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       throw new Error("ID inválido");
     }
-    const adoption = await this.repository.getBy({ _id: id });
-    if (!adoption) throw new Error("Adopción no enontrada");
+    const adoption = await this.repository.getById(id);
+    if (!adoption) {
+      throw new Error("Adopción no enontrada");
+    }
     return adoption;
   }
 
@@ -46,7 +48,6 @@ class AdoptionService {
     petDB.adopted = true;
     await petDB.save();
 
-    //creamos la adopción
     const newAdoption = await this.repository.create({ pet, owner });
     return newAdoption;
   }
