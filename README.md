@@ -15,57 +15,57 @@ Tecnologías utilizadas
 - Winston (logger)
 
 📌 Instalación local
-Clonar el repositorio:
+- Clonar el repositorio:
   https://github.com/PaulinaBarcosM/proyecto-avanzado-backend3.git
   cd RecursosBackend-Adoptme
 
-Instalar dependencias:
+- Instalar dependencias:
   npm install
 
-Configurar variables de entorno:
+- Configurar variables de entorno:
   cp .env.template .env
 
-Ejecutar entorno de desarrollo:
+- Ejecutar entorno de desarrollo:
   npm run dev o node src/app.js
 
 📌 Documentación con Swagger
-Podés acceder a la documentación completa de la API en:
-http://localhost:8080/apidocs
+-  Podés acceder a la documentación completa de la API en:
+  http://localhost:8080/apidocs
 
-Incluye endpoints para:
-Autenticación (registro, login, current), Usuarios (users), Mascotas (pets) y Adopciones (adoptions).
+- Incluye endpoints para:
+  Autenticación (registro, login, current), Usuarios (users), Mascotas (pets) y Adopciones (adoptions).
 
 📌 Scripts disponibles
-npm run dev 
-node src/app.js
-npm run start
-npm run test:api -> (para test funcionales)
-npm run test:unit -> (para test unitarios)
+- npm run dev 
+- node src/app.js
+- npm run start
+- npm run test:api -> (para test funcionales)
+- npm run test:unit -> (para test unitarios)
 
 📌 Docker
-Crear imagen
+- Crear imagen
   docker build -t paulinabarcos/adoptmeapp:1.0 .
-Imagen publicada
+- Imagen publicada
   https://hub.docker.com/r/paulinabarcos/adoptmeapp
-Ejecutar contenedor
+- Ejecutar contenedor
   docker run -p 8080:8080 paulabarcos/adoptme-backend:1.0
-Levantar entorno con Docker Compose
+- Levantar entorno con Docker Compose
   docker-compose up --build
 
 📌 Variables de entorno importantes
-Puerto de aplicación
+- Puerto de aplicación
   PORT=8080
-Conexión a MongoDB
+- Conexión a MongoDB
   MONGO_URL
 
 📌 Usuario para pruebas
-  Para pruebas automáticas:
+- Para pruebas automáticas:
     User:
-      usar el mock baseUser de mock.user.test.js
+    usar el mock baseUser de mock.user.test.js
     Pets:
-      usar el mock mockPetRequest de mock.adoption.test.js
-  Para pruebas de uso manual:
-    crear manualmente un usuario desde Postman: POST http://localhost:8080/api/sessions/register
+    usar el mock mockPetRequest de mock.adoption.test.js
+- Para pruebas de uso manual:
+  crear manualmente un usuario desde Postman: POST http://localhost:8080/api/sessions/register
     {
       first_name: "Paula",
       last_name: "Barcos",
