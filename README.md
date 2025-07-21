@@ -5,6 +5,7 @@ AdoptMe - Backend Proyecto Final Coderhouse
 Proyecto de backend para un sistema de adopción de mascotas desarrollado durante la diplomatura de Backend III en Coderhouse.
 
 Tecnologías utilizadas
+
 - Node.js
 - Express.js
 - MongoDB + Mongoose
@@ -15,6 +16,7 @@ Tecnologías utilizadas
 - Winston (logger)
 
 📌 Instalación local
+
 - Clonar el repositorio:
   https://github.com/PaulinaBarcosM/proyecto-avanzado-backend3.git
   cd RecursosBackend-Adoptme
@@ -29,20 +31,23 @@ Tecnologías utilizadas
   npm run dev o node src/app.js
 
 📌 Documentación con Swagger
--  Podés acceder a la documentación completa de la API en:
+
+- Podés acceder a la documentación completa de la API en:
   http://localhost:8080/apidocs
 
 - Incluye endpoints para:
   Autenticación (registro, login, current), Usuarios (users), Mascotas (pets) y Adopciones (adoptions).
 
 📌 Scripts disponibles
-- npm run dev 
+
+- npm run dev
 - node src/app.js
 - npm run start
 - npm run test:api -> (para test funcionales)
 - npm run test:unit -> (para test unitarios)
 
 📌 Docker
+
 - Crear imagen
   docker build -t paulinabarcos/adoptmeapp:1.0 .
 - Imagen publicada
@@ -53,25 +58,34 @@ Tecnologías utilizadas
   docker-compose up --build
 
 📌 Variables de entorno importantes
+
 - Puerto de aplicación
   PORT=8080
 - Conexión a MongoDB
   MONGO_URL
 
 📌 Usuario para pruebas
+
 - Para pruebas automáticas:
-    User:
-    usar el mock baseUser de mock.user.test.js
-    Pets:
-    usar el mock mockPetRequest de mock.adoption.test.js
+  User:
+  usar el mock baseUser de mock.user.test.js
 - Para pruebas de uso manual:
   crear manualmente un usuario desde Postman: POST http://localhost:8080/api/sessions/register
-    {
-      first_name: "Paula",
-      last_name: "Barcos",
-      email: "paula@correo.com",
-      password: "123456",
-    }
+  {
+  first_name: "Paula",
+  last_name: "Barcos",
+  email: "paula@correo.com",
+  password: "123456",
+  }
+  crear manualmente una mascota desde Postamn: POST http://localhost:8080/api/pets
+  {
+  "name": "Luna",
+  "specie": "dog",
+  "breed": "Beagle",
+  "color": "white and brown",
+  "ageYears": 2,
+  "ageMonths": 3
+  }
 
 🐶 Parte 1: Mocking API - Generación de Usuarios y Mascotas Falsas
 Este proyecto incluye un módulo de mocking que permite generar datos falsos de usuarios y mascotas para poblar la base de datos MongoDB con fines de prueba y desarrollo.
