@@ -542,3 +542,8 @@
 {"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-19T00:32:53.910Z"}
 {"level":"warn","message":"Usuario no encontrado: ID 687ae7b6ab4dcbb6bfe6119d","timestamp":"2025-07-19T00:32:55.089Z"}
 {"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-19T00:32:55.742Z"}
+{"level":"warn","message":"ID inválido para actualización: 123","timestamp":"2025-07-19T00:58:36.609Z"}
+{"level":"error","message":"Error al eliminar mascota 64c3e1e4ed84999999999999: Mascota no encontrada para eliminar","timestamp":"2025-07-19T00:58:36.786Z"}
+{"level":"warn","message":"Faltan campos obligatorios para actualizar usuario: {\"first_name\":\"SoloNombre\"}","timestamp":"2025-07-19T00:58:40.531Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 687aedc070cf0193dd8caf1b","timestamp":"2025-07-19T00:58:41.163Z"}
+{"level":"warn","message":"Usuario no encontrado: ID 64c3e1e4ed84999999999999","timestamp":"2025-07-19T00:58:41.694Z"}
